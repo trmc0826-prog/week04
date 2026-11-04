@@ -10,3 +10,21 @@ List<Artifact> artifacts = new List<Artifact>
 
 
 // TODO: Bruk Select til tre ulike projeksjoner.
+var names = artifacts.Select(artifact => artifact.Name);
+var risks = artifacts.Select(artifact => artifact.Risk);
+var descriptions = artifacts.Select(artifact => $"{artifact.Name} ({artifact.Origin})");
+
+foreach (var name in names)
+{
+    Console.WriteLine(name);
+}
+
+foreach (var risk in risks)
+{
+    Console.WriteLine(risk);
+}
+
+foreach (var description in descriptions)
+{
+    Console.WriteLine(description);
+}

@@ -11,7 +11,6 @@ public class Archive
 
     public List<string> GetEntries()
     {
-        // DESIGNFEIL med vilje: denne lekker den interne listen.
-        return entries;
+        return new List<string>(entries);
     }
 }

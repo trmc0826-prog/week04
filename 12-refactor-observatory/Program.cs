@@ -1,3 +1,4 @@
+
 List<Artifact> artifacts = new List<Artifact>
 {
     new Artifact("Echo Stone", "Moon", 73),
@@ -6,6 +7,8 @@ List<Artifact> artifacts = new List<Artifact>
     new Artifact("Signal Cube", "Moon", 91),
     new Artifact("Cold Lens", "Europa", 28)
 };
+
+ArtifactService service = new ArtifactService(artifacts);
 
 while (true)
 {
@@ -20,14 +23,15 @@ while (true)
 
     if (choice == "1")
     {
-        foreach (Artifact artifact in artifacts)
+        foreach (Artifact artifact in service.GetAll())
         {
             Console.WriteLine($"{artifact.Name} | {artifact.Origin} | {artifact.Risk}");
         }
     }
     else if (choice == "2")
     {
-        List<Artifact> highRisk = artifacts.Where(a => a.Risk >= 60).ToList();
+        List<Artifact> highRisk = service.GetHighRisk();
+
         foreach (Artifact artifact in highRisk)
         {
             Console.WriteLine($"{artifact.Name} | {artifact.Risk}");
@@ -40,9 +44,7 @@ while (true)
 
         if (!string.IsNullOrWhiteSpace(origin))
         {
-            List<Artifact> matches = artifacts
-                .Where(a => a.Origin.Equals(origin, StringComparison.OrdinalIgnoreCase))
-                .ToList();
+            List<Artifact> matches = service.SearchByOrigin(origin);
 
             foreach (Artifact artifact in matches)
             {
@@ -61,17 +63,3 @@ while (true)
 }
 
 // TODO: Refaktorer den fungerende monolitten til tydelige ansvar/layers.
-
-public class Artifact
-{
-    public string Name { get; set; }
-    public string Origin { get; set; }
-    public int Risk { get; set; }
-
-    public Artifact(string name, string origin, int risk)
-    {
-        Name = name;
-        Origin = origin;
-        Risk = risk;
-    }
-}

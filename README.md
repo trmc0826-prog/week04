@@ -4,15 +4,15 @@ Denne uken starter med eierskap til tilstand og referanseatferd før vi går ove
 
 ## Oppgaver
 
-01. **Specimen Vault** — private state og kontrollert modifikasjon
-02. **The Leaking Collection** — intern collection vs kopi
-03. **The Shallow Copy Surprise** — referansetyper inne i collections
-04. **Rule Runner** — delegates og Func<T, bool> med named method
-05. **Anonymous Rules** — single-expression lambdas
-06. **Complex Scanner Rule** — multi-line lambda
-07. **Artifact Projection** — LINQ Select
-08. **Archive Filter** — LINQ Where
-09. **Archive Questions** — LINQ Any og Count
+1.  **Specimen Vault** — private state og kontrollert modifikasjon
+2.  **The Leaking Collection** — intern collection vs kopi
+3.  **The Shallow Copy Surprise** — referansetyper inne i collections
+4.  **Rule Runner** — delegates og Func<T, bool> med named method
+5.  **Anonymous Rules** — single-expression lambdas
+6.  **Complex Scanner Rule** — multi-line lambda
+7.  **Artifact Projection** — LINQ Select
+8.  **Archive Filter** — LINQ Where
+9.  **Archive Questions** — LINQ Any og Count
 10. **Archive Ordering** — OrderBy + chaining
 11. **Reusable Search Engine** — delegate/lambda som innsendt atferd
 12. **Refactor the Observatory** — lagdelt struktur / MVC-intro
